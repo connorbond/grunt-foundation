@@ -32,10 +32,11 @@ Just run:
 
 `grunt`
 
-This will compile the Sass with Compass, run it against Bless for crappy IE selector limits and give you a handy popup alert when done. Winner!
+This will compile the Sass with Compass (cleaning cache), run it against Bless for crappy IE selector limits and give you a handy popup alert when done. Winner!
 
+It'll then keep watching for changes, and repeating the above.
 
-P.S. just want to compile once?
+P.S. just want to compile once without watching?
 
 `grunt build`
 

@@ -21,19 +21,19 @@ module.exports = function(grunt) {
         notify: {
             compile: {
                 options: {
-                    title: 'Compile Success!',
+                    title: 'Compile successful',
                     message: 'w/ Compass + Bless'
                 }
             }
         },
 
-        clean: ['dist/'],
+        clean: ['assets/css'],
 
         bless: {
             css: {
                 options: {},
                 files: {
-                    'assets/css/app.css': 'assets/css/lt-ie10.css'
+                    'assets/css/lt-ie10.css': 'assets/css/app.css'
                 }
             }
         },
@@ -58,7 +58,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-bless');
     grunt.loadNpmTasks('grunt-notify');
 
-    grunt.registerTask('build', ['clean','compass','bless','notify:compile']);
+    grunt.registerTask('successful', 'Compile was successful', function() {
+        grunt.log.writeln('Compile successful.');
+    });
+    grunt.registerTask('build', ['clean','compass','bless','notify:compile','successful']);
+
     grunt.registerTask('default', ['build','watch']);
 
 }
